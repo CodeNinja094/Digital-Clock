@@ -12,43 +12,43 @@
 <body>
   <header>
     <div id="logo">
-      <h2><a href="../index.html">CLOCK</a></h2>
-    </div>
-    <div class="header-div2">
-      <div id="Clock" class="header-ele"><a href="../Clock_Folder/clock.html">Clock</a></div>
-      <div id="stopWatch" class="header-ele"><a href="stopwatch.html">StopWatch</a></div>
-      <div id="timer" class="header-ele"><a href="timer.html">Timer</a></div>
-      <div id="alarm" class="header-ele"><a href="../Alarm_Folder/alarm.html">Alarm</a></div>
-    </div>
+        <div onclick="window.location.href='../index.html'">CLOCK</div>
+      </div>
+      <div class="header-div2">
+        <div id="alarm" class="header-ele" onclick="window.location.href='../Alarm_Folder/alarm.html'">Alarm</div>
+        <div id="Clock" class="header-ele" onclick="window.location.href='../Clock_Folder/clock.html'">Clock</div>
+        <div id="stopWatch" class="header-ele" onclick="window.location.href='stopwatch.html'">StopWatch</div>
+        <div id="timer" class="header-ele" onclick="window.location.href='../Stopwatch_Folder/stopwatch.html'">Timer</div>
+      </div>
   </header>
 
   <main id="content">
     <div id="loading-spinner" class="spinner"></div>
     <div id="clock">
-        <div id="hrs" class="time">
-          <div class="time-cover">
-            <div id="hrs-div1" class="time-"></div>
-          </div>
-          <div class="time-cover">
-            <div id="hrs-div2" class="time-"></div>
-          </div>
-        </div>
-        <div class="semi-colon">:</div>
         <div id="min" class="time">
           <div class="time-cover">
-            <div id="min-div1" class="time-"></div>
+            <div id="min-div1" class="time-">0</div>
           </div>
           <div class="time-cover">
-            <div id="min-div2" class="time-"></div>
+            <div id="min-div2" class="time-">0</div>
           </div>
         </div>
         <div class="semi-colon">:</div>
         <div id="sec" class="time">
           <div class="time-cover">
-            <div id="sec-div1" class="time-"></div>
+            <div id="sec-div1" class="time-">0</div>
           </div>
           <div class="time-cover">
-            <div id="sec-div2" class="time-"></div>
+            <div id="sec-div2" class="time-">0</div>
+          </div>
+        </div>
+        <div class="semi-colon">:</div>
+        <div id="msec" class="time">
+          <div class="time-cover">
+            <div id="msec-div1" class="time-">0</div>
+          </div>
+          <div class="time-cover">
+            <div id="msec-div2" class="time-">0</div>
           </div>
         </div>
     </div>
@@ -58,8 +58,12 @@
             <div id="start">Start</div>
             <div id="lap" class="btn">Lap</div>
             <div id="pause" class="btn">Pause</div>
-            <div id="reset" class="btnX">reset</div>
-            <div id="resume" class="btnX">resume</div>
+            <div id="reset" class="btnX">Reset</div>
+            <div id="resume" class="btnX">Resume</div>
+        </div>
+
+        <div id="lap-boxCover">
+
         </div>
     </div>
   </main>

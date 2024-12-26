@@ -26,15 +26,11 @@ header {
     border-right: 2px solid white;
 }
 
-.header-div2 {
-    height: 100%;
-    width: 75%;
-    color: white;
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.header-ele {
+#logo div {
+    height: 70%;
+    width: 40%;
+    font-size: 20pt;
+    border-radius: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -43,9 +39,41 @@ header {
     font-weight: 700;
 }
 
-a {
-    text-decoration: none;
+#logo div:hover {
+    box-shadow: 0 0 10px black;
+}
+
+#logo div:active {
+    box-shadow: 0 0 10px white;
+}
+
+.header-div2 {
+    height: 100%;
+    width: 75%;
     color: white;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.header-ele {
+    height: 70%;
+    width: 10%;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.header-ele:hover {
+    box-shadow: 0 0 10px black;
+}
+
+.header-ele:active {
+    box-shadow: 0 0 10px white;
 }
 
 .spinner {
@@ -172,8 +200,6 @@ a {
     width: 35%;
     height: 90%;
     margin-top: 30px;
-    display: flex;
-    justify-content: space-evenly;
     border-radius: 10px;
     background-color: rgba(56, 51, 51, 0.414);
 }
@@ -253,3 +279,47 @@ a {
     box-shadow: 0 0 0;
 }
 
+#lap-boxCover {
+    width: 100%;
+    height: 90%;
+    padding: 10px;
+    border-radius: 0 0 10px 10px;
+    flex-direction: column;
+    overflow-y: scroll;
+    overflow: scroll;-ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+#lap-boxCover::-webkit-scrollbar {
+    display: none;
+}
+
+#lap-box {
+    width: 100%;
+    height: 10%;
+    font-size: 15pt;
+    margin: 0 0 10px 0;
+    box-shadow: 0 0 10px black;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#lap-num {
+    width: 10%;
+    height: 100%;
+    border-right: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#lap-data {
+    width: 90%;
+    height: 100%;
+    padding: 0 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
