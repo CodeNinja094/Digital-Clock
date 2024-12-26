@@ -116,7 +116,6 @@ a {
 .time-cover {
     height: 70%;
     width: 40%;
-    border: 1px solid white;
     border-radius: 20px;
     background-color: black;
     overflow: hidden;
@@ -126,7 +125,7 @@ a {
 }
 
 .time-cover:hover {
-    box-shadow: 0 0 10px white;
+    box-shadow: 0 0 10px black;
     cursor: pointer;
 }
 

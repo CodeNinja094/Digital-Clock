@@ -189,11 +189,6 @@ a {
     background-color: rgba(250, 235, 215, 0.816);
 }
 
-/* #setAudio div:active {
-    background-color: green;
-    color: white;
-} */
-
 #alarmInput {
     display: none;
     height: 250px;
@@ -338,7 +333,6 @@ input:focus {
 .time-cover {
     height: 70%;
     width: 40%;
-    border: 1px solid white;
     border-radius: 20px;
     background-color: black;
     overflow: hidden;
@@ -348,7 +342,7 @@ input:focus {
 }
 
 .time-cover:hover {
-    background-color: white;
+    box-shadow: 0 0 10px black;
     cursor: pointer;
 }
 
@@ -361,10 +355,6 @@ input:focus {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.time-cover:hover .time- {
-    color: black;
 }
 
 .swipe-in {
