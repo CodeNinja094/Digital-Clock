@@ -126,7 +126,7 @@ a {
 }
 
 .time-cover:hover {
-    background-color: white;
+    box-shadow: 0 0 10px white;
     cursor: pointer;
 }
 
@@ -139,10 +139,6 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.time-cover:hover .time- {
-    color: black;
 }
 
 .swipe-in {
