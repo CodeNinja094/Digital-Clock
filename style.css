@@ -50,7 +50,7 @@ a {
 }
 
 .spinner {
-    border: 1px solid #f3f3f3;
+    border: 10px solid #f3f3f3;
     border-top: 10px solid #3498db;
     border-radius: 50%;
     width: 100px;
@@ -67,7 +67,7 @@ main {
     height: calc(100vh - 50px);
     width: calc((100vh - 50px) * 1.5);
     margin: auto;
-    background-image: url('../Images/clock-background.jpg');
+    background-image: url('Images/clock-background.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
