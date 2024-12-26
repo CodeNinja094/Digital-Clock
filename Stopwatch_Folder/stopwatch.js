@@ -1,6 +1,31 @@
+let start = document.getElementById('start');
+let btns = document.querySelectorAll('.btn');
+let btnsX = document.querySelectorAll('.btnX');
 
+start.addEventListener('click', () => {
+    start.style.display = 'none';
+    btns.forEach(btn => {
+        btn.style.display = 'flex';
+    });
+});
 
+btns[1].addEventListener('click', () => {
+    btns.forEach(btn => {
+        btn.style.display = 'none';
+    });
+    btnsX.forEach(btnX => {
+        btnX.style.display = 'flex';
+    });
+});
 
+btnsX[1].addEventListener('click', () => {
+    btns.forEach(btn => {
+        btn.style.display = 'flex';
+    });
+    btnsX.forEach(btnX => {
+        btnX.style.display = 'none';
+    });
+});
 
 
 window.addEventListener('load', () => {

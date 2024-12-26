@@ -79,7 +79,7 @@ a {
 }
 
 #clock {
-    width: 45%;
+    width: 60%;
     height: 60%;
     margin-top: 30px;
     display: none;
@@ -90,8 +90,8 @@ a {
 }
 
 .time {
-    height: 70%;
-    width: 40%;
+    height: 60%;
+    width: 25%;
     border: 1px solid rgb(92, 90, 90);
     background-color: gray;
     border-radius: 20px;
@@ -103,7 +103,7 @@ a {
 
 .semi-colon {
     height: 40%;
-    width: 5%;
+    width: 2%;
     font-size: 100pt;
     border-radius: 20px;
     text-align: center;
@@ -167,3 +167,89 @@ a {
         transform: translateY(100%);
     }
 }
+
+#data {
+    width: 35%;
+    height: 90%;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-evenly;
+    border-radius: 10px;
+    background-color: rgba(56, 51, 51, 0.414);
+}
+
+#btn-box {
+    height: 10%;
+    width: 100%;
+    border-bottom: 1px solid black;
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#start {
+    width: 50%;
+    height: 70%;
+    background-color: rgb(246, 16, 16);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15pt;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#start:hover {
+    box-shadow: 0 0 10px black;
+}
+
+#start:active {
+    box-shadow: 0 0 0;
+}
+
+.btn {
+    width: 23%;
+    height: 70%;
+    margin: 0 10px 0 0;
+    background-color: rgb(246, 16, 16);
+    color: white;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 15pt;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    box-shadow: 0 0 10px black;
+}
+
+.btn:active {
+    box-shadow: 0 0 0;
+}
+
+.btnX {
+    width: 23%;
+    height: 70%;
+    margin: 0 10px 0 0;
+    background-color: rgb(246, 16, 16);
+    color: white;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 15pt;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.btnX:hover {
+    box-shadow: 0 0 10px black;
+}
+
+.btnX:active {
+    box-shadow: 0 0 0;
+}
+
