@@ -11,7 +11,7 @@ body {
 header {
     height: 50px;
     width: 100vw;
-    font-size: max(15pt, 1.7vw);
+    font-size: clamp(1rem, 1.6vw, 5rem);
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -70,13 +70,17 @@ header {
     width: 100vw;
     height: calc(100vh - 50px);
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 0px;
+    gap: 15px;
+    overflow: hidden;
 }
 
 #clock {
-    width: 45%;
-    height: 60%;
-    margin-top: 30px;
+    width: min(340px, 95%);
+    height: 25%;
+    flex-shrink: 0;
     display: none;
     justify-content: space-evenly;
     align-items: center;
@@ -85,9 +89,9 @@ header {
 }
 
 #alarm-div {
-    width: 45%;
-    height: 60%;
-    margin-top: 30px;
+    width: min(340px, 95%);
+    height: calc(75% - 15px);
+    flex-shrink: 0;
     display: none;
     border-radius: 10px;
     background-color: rgba(56, 51, 51, 0.414);
@@ -97,10 +101,9 @@ header {
     height: 40px;
     width: 100%;
     border-bottom: 1px solid black;
-    box-shadow: 0px 0px 10px black;
+    box-shadow: 0px 0px 5px black;
     border-radius: 10px 10px 0 0;
     display: flex;
-    justify-content: space-evenly;
 }
 
 #alarm-name {
@@ -111,24 +114,26 @@ header {
     align-items: center;
     border-radius: 10px 0 0 0;
     border-right: 1px solid white;
+    font-size: min(7vw, 15pt);
 }
 
 .alarm-setting {
+    position: relative;
     height: 100%;
     width: 75%;
+    padding: 0 10px;
     display: flex;
     justify-content: flex-end;
+    gap: 10px;
     align-items: center;
     border-radius: 0 10px 0 0;
     border-left: 1px solid white;
 }
 
 .alarm-icons {
-    height: 80%;
+    height: 75%;
     aspect-ratio: 1 / 1;
-    margin: 0 10px;
-    font-size: 20pt;
-    /* border: 1px solid black; */
+    font-size: 18pt;
     box-shadow: 0px 0px 10px black;
     color: black;
     background-color: rgb(209, 209, 209);
@@ -151,24 +156,25 @@ header {
 #setAudio {
     display: none;
     padding: 10px 0;
-    height: 250px;
-    width: 400px;
-    padding: 10px;
+    height: 300px;
+    width: 300px;
+    padding: 5px;
+    text-align: center;
     background-color: gray;
     box-shadow: 0 0 10px white;
-    z-index: 150;
+    z-index: 5;
     border-radius: 10px;
     position: absolute;
-    top: 19%;
-    right: 5%;
-    overflow: scroll;-ms-overflow-style: none;
+    top: 120%;
+    left: -25%;
+    overflow: scroll;
+    -ms-overflow-style: none;
     scrollbar-width: none;
 }
 
 #setAudio::-webkit-scrollbar {
     display: none;
 }
-
 
 #setAudio div {
     width: 90%;
@@ -194,8 +200,8 @@ header {
     border-radius: 10px;
     box-shadow: 0 0 10px white;
     position: absolute;
-    top: 19%;
-    right: 5%;
+    top: 120%;
+    left: 15%;
 }
 
 label {
@@ -302,8 +308,8 @@ input:focus {
 }
 
 .time {
-    height: 70%;
-    width: 40%;
+    height: 90%;
+    width: 45%;
     border: 1px solid rgb(92, 90, 90);
     background-color: gray;
     border-radius: 20px;
@@ -313,22 +319,10 @@ input:focus {
     box-shadow: 2px 3px 5px rgb(0, 0, 0);
 }
 
-.semi-colon {
-    height: 40%;
-    width: 5%;
-    font-size: 100pt;
-    border-radius: 20px;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-}
-
 .time-cover {
-    height: 70%;
+    height: 80%;
     width: 40%;
-    border-radius: 20px;
+    border-radius: 15px;
     background-color: black;
     overflow: hidden;
     display: flex;
@@ -337,7 +331,7 @@ input:focus {
 }
 
 .time-cover:hover {
-    box-shadow: 0 0 10px black;
+    box-shadow: 0 0 5px black;
     cursor: pointer;
 }
 
@@ -345,7 +339,7 @@ input:focus {
     height: 100%;
     width: 100%;
     color: white;
-    font-size: 100pt;
+    font-size: min(25vw, 6rem);
     border-radius: 20px;
     display: flex;
     justify-content: center;
