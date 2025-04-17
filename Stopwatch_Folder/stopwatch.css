@@ -253,7 +253,8 @@ header {
     border-radius: 0 0 10px 10px;
     flex-direction: column;
     overflow-y: scroll;
-    overflow: scroll;-ms-overflow-style: none;
+    overflow: scroll;
+    -ms-overflow-style: none;
     scrollbar-width: none;
 }
 

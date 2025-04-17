@@ -6,7 +6,7 @@ let sec1 = document.querySelector("#sec-div1");
 let sec2 = document.querySelector("#sec-div2");
 
 let now = new Date();
-    let timeString = now.toLocaleTimeString('en-GB');
+let timeString = now.toLocaleTimeString('en-GB');
 
 
 function clock() {

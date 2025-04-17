@@ -69,7 +69,7 @@ btns[0].addEventListener('click', () => {
 });
 
 let count2 = 0;
-function stopWatch () {
+function stopWatch() {
     if (parseInt(sec2.innerText) < 9) {
         sec2.innerText = parseInt(sec2.innerText) + 1;
     } else {
