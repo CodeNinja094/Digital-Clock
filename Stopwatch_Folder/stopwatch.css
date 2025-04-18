@@ -11,7 +11,7 @@ body {
 header {
     height: 50px;
     width: 100vw;
-    font-size: max(15pt, 1.7vw);
+    font-size: clamp(1rem, 1.6vw, 5rem);
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -22,7 +22,7 @@ header {
 .header-ele {
     height: 70%;
     width: max(95px, 10%);
-    border-radius: 100px;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,39 +31,26 @@ header {
     font-weight: 700;
 }
 
-.header-ele:hover {
-    box-shadow: 0 0 10px black;
-}
-
-.header-ele:active {
-    box-shadow: 0 0 10px white;
-}
-
-#stopWatch {
-    box-shadow: 0 0 10px black;
-}
-
-.spinner {
-    border: 10px solid #f3f3f3;
-    border-top: 10px solid #3498db;
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-    animation: spin 1s linear infinite;
+.header-ele::after {
+    content: "";
     position: absolute;
-    top: 40%;
-    left: 45%;
-    transform: translate(-50%, -50%);
+    bottom: 0;
+    left: 5%;
+    width: 90%; 
+    height: 5px;
+    background-color: white; 
+    border-radius: 10px;
+    transform: scaleX(0);
+    transform-origin: center; 
+    transition: transform 0.3s ease;
 }
 
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
+.header-ele:hover::after {
+    transform: scaleX(1); 
+}
 
-    100% {
-        transform: rotate(360deg);
-    }
+.header-ele:nth-child(3)::after {
+    transform: scaleX(1);
 }
 
 #content {

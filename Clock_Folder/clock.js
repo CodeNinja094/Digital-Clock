@@ -38,7 +38,6 @@ function clock() {
 }
 
 window.addEventListener('load', () => {
-    document.getElementById('loading-spinner').style.display = 'none';
     document.getElementById('clock').style.display = 'flex';
     clock();
     setInterval(clock, 1000);
