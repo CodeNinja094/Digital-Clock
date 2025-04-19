@@ -116,9 +116,3 @@ function stopWatch() {
 }
 
 
-
-
-window.addEventListener('load', () => {
-    document.getElementById('clock').style.display = 'flex';
-    document.getElementById('data').style.display = 'block';
-});
