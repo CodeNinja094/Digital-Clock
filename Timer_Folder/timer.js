@@ -1,7 +1,12 @@
 let start = document.getElementById('start');
 let btns = document.querySelectorAll('.btn');
 let btnsX = document.querySelectorAll('.btnX');
+let addBtn = document.querySelector('#add-timer-box');
 let timerCover = document.querySelector('#timer-boxCover');
+
+let deleteBtn = document.querySelectorAll('.delete');
+console.log(deleteBtn.length);
+
 let time = document.querySelector('#clock');
 
 let sec1 = document.querySelector('#sec-div1');
@@ -22,22 +27,15 @@ start.addEventListener('click', () => {
     intervalId = setInterval(stopWatch, 10);
 });
 
-btns[1].addEventListener('click', () => {
+btns[0].addEventListener('click', () => {
     btns.forEach(btn => {
         btn.style.display = 'none';
     });
     btnsX.forEach(btnX => {
-        btnX.style.display = 'flex';
-    });
-    clearInterval(intervalId);
-});
-
-btnsX[0].addEventListener('click', () => { //reset
-    start.style.display = 'flex';
-    btnsX.forEach(btnX => {
         btnX.style.display = 'none';
     });
-    count2 = 0;
+    start.style.display = 'flex';
+
     sec1.innerText = 0;
     sec2.innerText = 0;
 
@@ -47,25 +45,21 @@ btnsX[0].addEventListener('click', () => { //reset
     hrs1.innerText = 0;
     hrs2.innerText = 0;
 
-    timerCover.innerHTML = '';
+    clearInterval(intervalId);
 });
 
-btnsX[1].addEventListener('click', () => { //resume
-    btns.forEach(btn => {
-        btn.style.display = 'flex';
-    });
-    btnsX.forEach(btnX => {
-        btnX.style.display = 'none';
-    });
+btns[1].addEventListener('click', () => {
+    btns[1].style.display = 'none';
+    btnsX[0].style.display = 'flex';
+
+    clearInterval(intervalId);
+});
+
+btnsX[0].addEventListener('click', () => { //resume
+    btns[1].style.display = 'flex';
+    btnsX[0].style.display = 'none';
+
     intervalId = setInterval(stopWatch, 10);
-});
-
-let count = 1;
-btns[0].addEventListener('click', () => {
-    timerCover.innerHTML = `<div id="timer-box">
-                <div id="timer-data">${time.innerText}</div>
-            </div>` + timerCover.innerHTML;
-    count++;
 });
 
 let count2 = 0;
@@ -113,3 +107,59 @@ function stopWatch() {
         }
     }
 }
+
+let timerCount = 5;
+addBtn.addEventListener("click", function () {
+    timerCount++;
+    let outerDiv = document.createElement("div");
+    outerDiv.classList.add("timer-box");
+    let innerDiv1 = document.createElement("div");
+    innerDiv1.classList.add("timer-data");
+
+    let innerDiv2 = document.createElement("div");
+    innerDiv2.classList.add("timerName");
+    let innerDiv3 = document.createElement("div");
+    innerDiv3.classList.add("delete");
+
+    innerDiv1.textContent = "00:02:00";
+    innerDiv2.textContent = "Brush";
+    innerDiv3.innerHTML = '<i class="bi bi-trash"></i>';
+
+    outerDiv.appendChild(innerDiv1);
+    outerDiv.appendChild(innerDiv2);
+    outerDiv.appendChild(innerDiv3);
+    timerCover.insertBefore(outerDiv, addBtn);
+
+    // deleteBtn = document.querySelectorAll('.delete');
+    // console.log(deleteBtn.length);
+
+    if (timerCount == 9) {
+        addBtn.style.display = 'none';
+    }
+});
+
+// deleteBtn.forEach(Dbtn => {
+//     Dbtn.addEventListener("click", function () {
+//         let parentDiv = this.parentElement;
+//         parentDiv.remove();
+//         timerCount--;
+//         deleteBtn = document.querySelectorAll('.delete');
+//         console.log(deleteBtn.length);
+//         if (timerCount < 9) {
+//             addBtn.style.display = 'flex';
+//         }
+//     });
+// });
+
+timerCover.addEventListener("click", function (e) {
+    if (e.target.closest(".delete")) {
+      let parentDiv = e.target.closest(".timer-box");
+      parentDiv.remove();
+      timerCount--;
+  
+      if (timerCount < 9) {
+        addBtn.style.display = 'flex';
+      }
+    }
+  });
+  

@@ -41,5 +41,4 @@ window.addEventListener('load', () => {
     document.getElementById('clock').style.display = 'flex';
     clock();
     setInterval(clock, 1000);
-    console.log(timeString);
 });

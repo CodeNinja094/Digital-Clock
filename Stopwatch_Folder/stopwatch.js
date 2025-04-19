@@ -22,6 +22,15 @@ start.addEventListener('click', () => {
     intervalId = setInterval(stopWatch, 10);
 });
 
+let count = 1;
+btns[0].addEventListener('click', () => {
+    lapCover.innerHTML = `<div id="lap-box">
+                <div id="lap-num">${count}</div>
+                <div id="lap-data">${time.innerText}</div>
+            </div>` + lapCover.innerHTML;
+    count++;
+});
+
 btns[1].addEventListener('click', () => {
     btns.forEach(btn => {
         btn.style.display = 'none';
@@ -37,6 +46,7 @@ btnsX[0].addEventListener('click', () => { //reset
     btnsX.forEach(btnX => {
         btnX.style.display = 'none';
     });
+    count = 1;
     count2 = 0;
     msec1.innerText = 0;
     msec2.innerText = 0;
@@ -58,15 +68,6 @@ btnsX[1].addEventListener('click', () => { //resume
         btnX.style.display = 'none';
     });
     intervalId = setInterval(stopWatch, 10);
-});
-
-let count = 1;
-btns[0].addEventListener('click', () => {
-    lapCover.innerHTML = `<div id="lap-box">
-                <div id="lap-num">${count}</div>
-                <div id="lap-data">${time.innerText}</div>
-            </div>` + lapCover.innerHTML;
-    count++;
 });
 
 let count2 = 0;

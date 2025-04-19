@@ -124,5 +124,4 @@ resetBtn.addEventListener('click', () => {
 window.addEventListener('load', () => {
     clock();
     setInterval(clock, 1000);
-    console.log(timeString);
 });
