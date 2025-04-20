@@ -99,13 +99,6 @@ setBtn.addEventListener('click', () => {
           </div>
         </div>`;
     alarm_content.innerHTML += newAlarm;
-    let deleteButtons = document.querySelectorAll(".userAlarmDelete");
-
-    deleteButtons.forEach((deletbutton) => {
-        deletbutton.addEventListener('click', () => {
-            deletbutton.parentElement.remove();
-        });
-    });
 
     alarmname.value = "";
     appt.value = "";
@@ -115,6 +108,19 @@ setBtn.addEventListener('click', () => {
     alarm_num++;
     alarmname.placeholder = `Alarm ${alarm_num}`;
 });
+
+alarm_content.addEventListener("click", function (e) {
+    if (e.target.closest(".userAlarmDelete")) {
+        let parentDiv = e.target.closest(".userAlarm");
+        parentDiv.remove();
+        timerCount--;
+
+        if (timerCount < 9) {
+            addBtn.style.display = 'flex';
+        }
+    }
+});
+
 
 resetBtn.addEventListener('click', () => {
     alarmname.value = "";

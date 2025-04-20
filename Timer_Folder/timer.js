@@ -4,9 +4,6 @@ let btnsX = document.querySelectorAll('.btnX');
 let addBtn = document.querySelector('#add-timer-box');
 let timerCover = document.querySelector('#timer-boxCover');
 
-let deleteBtn = document.querySelectorAll('.delete');
-console.log(deleteBtn.length);
-
 let time = document.querySelector('#clock');
 
 let sec1 = document.querySelector('#sec-div1');
@@ -130,36 +127,19 @@ addBtn.addEventListener("click", function () {
     outerDiv.appendChild(innerDiv3);
     timerCover.insertBefore(outerDiv, addBtn);
 
-    // deleteBtn = document.querySelectorAll('.delete');
-    // console.log(deleteBtn.length);
-
     if (timerCount == 9) {
         addBtn.style.display = 'none';
     }
 });
 
-// deleteBtn.forEach(Dbtn => {
-//     Dbtn.addEventListener("click", function () {
-//         let parentDiv = this.parentElement;
-//         parentDiv.remove();
-//         timerCount--;
-//         deleteBtn = document.querySelectorAll('.delete');
-//         console.log(deleteBtn.length);
-//         if (timerCount < 9) {
-//             addBtn.style.display = 'flex';
-//         }
-//     });
-// });
-
 timerCover.addEventListener("click", function (e) {
     if (e.target.closest(".delete")) {
-      let parentDiv = e.target.closest(".timer-box");
-      parentDiv.remove();
-      timerCount--;
-  
-      if (timerCount < 9) {
-        addBtn.style.display = 'flex';
-      }
+        let parentDiv = e.target.closest(".timer-box");
+        parentDiv.remove();
+        timerCount--;
+
+        if (timerCount < 9) {
+            addBtn.style.display = 'flex';
+        }
     }
-  });
-  
+});
