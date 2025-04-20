@@ -3,6 +3,9 @@ let btns = document.querySelectorAll('.btn');
 let btnsX = document.querySelectorAll('.btnX');
 let addBtn = document.querySelector('#add-timer-box');
 let timerCover = document.querySelector('#timer-boxCover');
+let timerPanel = document.querySelector('#timerPanel');
+let timerPanelSave = document.querySelector('#timerPanelSave');
+let timerPanelCancel = document.querySelector('#timerPanelCancel');
 
 let time = document.querySelector('#clock');
 
@@ -107,6 +110,12 @@ function stopWatch() {
 
 let timerCount = 5;
 addBtn.addEventListener("click", function () {
+    timerPanel.style.display = 'flex';
+
+
+});
+
+timerPanelSave.addEventListener("click", function () {
     timerCount++;
     let outerDiv = document.createElement("div");
     outerDiv.classList.add("timer-box");
@@ -130,7 +139,13 @@ addBtn.addEventListener("click", function () {
     if (timerCount == 9) {
         addBtn.style.display = 'none';
     }
-});
+    timerPanel.style.display = 'none';
+})
+
+timerPanelCancel.addEventListener("click", function () {
+    timerPanel.style.display = 'none';
+
+})
 
 timerCover.addEventListener("click", function (e) {
     if (e.target.closest(".delete")) {
