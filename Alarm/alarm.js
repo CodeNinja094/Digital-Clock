@@ -114,10 +114,6 @@ alarm_content.addEventListener("click", function (e) {
         let parentDiv = e.target.closest(".userAlarm");
         parentDiv.remove();
         timerCount--;
-
-        if (timerCount < 9) {
-            addBtn.style.display = 'flex';
-        }
     }
 });
 

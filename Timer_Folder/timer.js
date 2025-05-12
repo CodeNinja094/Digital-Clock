@@ -6,7 +6,7 @@ let timerCover = document.querySelector('#timer-boxCover');
 let timerPanel = document.querySelector('#timerPanel');
 let timerPanelSave = document.querySelector('#timerPanelSave');
 let timerPanelCancel = document.querySelector('#timerPanelCancel');
-
+let timerBox = document.querySelector('.timer-box');
 let time = document.querySelector('#clock');
 
 let sec1 = document.querySelector('#sec-div1');
@@ -17,6 +17,8 @@ let min2 = document.querySelector('#min-div2');
 
 let hrs1 = document.querySelector('#hrs-div1');
 let hrs2 = document.querySelector('#hrs-div2');
+let nametext = document.querySelector('#name');
+let timetext = document.querySelector('#time');
 
 start.addEventListener('click', () => {
     start.style.display = 'none';
@@ -115,8 +117,28 @@ addBtn.addEventListener("click", function () {
 
 });
 
+let initialTime = "00:00";
+let initialName = "";
+let selectedTime = "00:00";
+let selectedName = "";
+nametext.addEventListener('change', function () {
+    selectedName = this.value;
+})
+timetext.addEventListener('change', function () {
+    selectedTime = this.value;
+})
+
 timerPanelSave.addEventListener("click", function () {
+    if (initialTime === selectedTime) {
+        alert('Enter time.');
+        return;
+    }
+    if (initialName === selectedName) {
+        alert('Enter name.');
+        return;
+    }
     timerCount++;
+    console.log(selectedTime);
     let outerDiv = document.createElement("div");
     outerDiv.classList.add("timer-box");
     let innerDiv1 = document.createElement("div");
@@ -125,11 +147,11 @@ timerPanelSave.addEventListener("click", function () {
     let innerDiv2 = document.createElement("div");
     innerDiv2.classList.add("timerName");
     let innerDiv3 = document.createElement("div");
-    innerDiv3.classList.add("delete");
+    innerDiv3.classList.add("tool");
 
-    innerDiv1.textContent = "00:02:00";
-    innerDiv2.textContent = "Brush";
-    innerDiv3.innerHTML = '<i class="bi bi-trash"></i>';
+    innerDiv1.textContent = selectedTime;
+    innerDiv2.textContent = selectedName;
+    innerDiv3.innerHTML = '<div class="delete"><i class="bi bi-trash"></i></div> <div class="pen"><i class="bi bi-pen"></i></div>';
 
     outerDiv.appendChild(innerDiv1);
     outerDiv.appendChild(innerDiv2);
@@ -156,5 +178,19 @@ timerCover.addEventListener("click", function (e) {
         if (timerCount < 9) {
             addBtn.style.display = 'flex';
         }
+    } else if (e.target.closest(".pen")) {
+        
+            
+    } else {
+            let targetDiv = e.target.closest(".timer-box").querySelector('.timer-data');
+            let TargetData = targetDiv.innerText;
+            console.log(TargetData);
+            hrs1.innerText = TargetData[0];
+            hrs2.innerText = TargetData[1];
+            min1.innerText = TargetData[3];
+            min2.innerText = TargetData[4];
+            sec1.innerText = TargetData[6];
+            sec2.innerText = TargetData[7];
     }
 });
+

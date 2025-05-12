@@ -56,49 +56,51 @@
 
       <div id="timer-boxCover">
         <div class="timer-box">
-          <div class="timer-data">00:02:00</div>
+          <div class="timer-data">00:42:00</div>
           <div class="timerName">Brush1</div>
-          <div class="delete"><i class="bi bi-trash"></i></div>
+          <div class="tool">
+            <div class="delete"><i class="bi bi-trash"></i></div>
+            <div class="pen"><i class="bi bi-pen"></i></div>
+          </div>
         </div>
 
         <div class="timer-box">
           <div class="timer-data">00:02:00</div>
           <div class="timerName">Brush2</div>
-          <div class="delete"><i class="bi bi-trash"></i></div>
+          <div class="tool">
+            <div class="delete"><i class="bi bi-trash"></i></div>
+            <div class="pen"><i class="bi bi-pen"></i></div>
+          </div>
         </div>
 
         <div class="timer-box">
-          <div class="timer-data">00:02:00</div>
+          <div class="timer-data">10:02:00</div>
           <div class="timerName">Brush3</div>
-          <div class="delete"><i class="bi bi-trash"></i></div>
-        </div>
-
-        <div class="timer-box">
-          <div class="timer-data">00:02:00</div>
-          <div class="timerName">Brush4</div>
-          <div class="delete"><i class="bi bi-trash"></i></div>
-        </div>
-
-        <div class="timer-box">
-          <div class="timer-data">00:02:00</div>
-          <div class="timerName">Brush5</div>
-          <div class="delete"><i class="bi bi-trash"></i></div>
+          <div class="tool">
+            <div class="delete"><i class="bi bi-trash"></i></div>
+            <div class="pen"><i class="bi bi-pen"></i></div>
+          </div>
         </div>
 
         <div id="add-timer-box">
           <div id="add-timer"><i class="bi bi-plus"></i></div>
         </div>
+
         <div id="timerPanel">
           <div id="timerPanelHead">
-            <div id="timerPanelCancel" class="timerPanelBtn" style="color: red;">Cancel</div>
+            <div id="timerPanelCancel" class="timerPanelBtn">Cancel</div>
             <div class="timerPanelBtn" style="color: white;">Set Timer</div>
-            <div id="timerPanelSave" class="timerPanelBtn" style="color: red;">Save</div>
+            <div id="timerPanelSave" class="timerPanelBtn">Save</div>
           </div>
+
           <div id="timerPanelContent">
-            <div id="setName"></div>
-            <div id="setTime"></div>
+            <label for="name">Set timer name:</label> <br>
+            <input type="text" id="name" maxlength="10" placeholder="name"> <br>
+            <label for="time">Set time</label> <br>
+            <input type="time" step="1" id="time" value="00:00:00">
           </div>
         </div>
+
       </div>
     </div>
   </main>
